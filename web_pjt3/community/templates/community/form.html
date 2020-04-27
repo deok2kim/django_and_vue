@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <h1>Form</h1>
+    <hr>
+<form action="" method="POST">
+    {% csrf_token %}
+    {{form}}
+    <button>작성완료</button>
+</form>
+
+{% endblock %}

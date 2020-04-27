@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <h1>Review</h1>
+    <hr>
+    <a href="{% url 'community:create' %}"><button class="btn btn-primary">글쓰기</button></a>
+    {% for review in reviews %}
+    <p><a href="{% url 'community:detail' review.pk %}">{{ review.title }}</a></p>
+    {% endfor %}
+{% endblock %}
