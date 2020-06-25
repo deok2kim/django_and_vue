@@ -25,17 +25,23 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites', # registraion
 
-    #DRF
+    # DRF
     'rest_framework',
     'rest_framework.authtoken',
 
-    #rest-auth
+    # rest-auth + allauth
     'rest_auth',
+    'allauth',
+    'allauth.account',
+    'rest_auth.registration',
 
-    #My Apps
+    # My Apps
     'accounts',
     'articles',
+
+
 
 ]
 
@@ -127,3 +133,6 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.TokenAuthentication',
     ]
 }
+
+# django sites app setting
+SITE_ID = 1
