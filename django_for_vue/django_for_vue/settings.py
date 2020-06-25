@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     'allauth.account',
     'rest_auth.registration',
 
+    # CORS
+    'corsheaders',
+
     # My Apps
     'accounts',
     'articles',
@@ -46,6 +49,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -105,6 +109,8 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# django sites app setting
+SITE_ID = 1
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
@@ -134,5 +140,5 @@ REST_FRAMEWORK = {
     ]
 }
 
-# django sites app setting
-SITE_ID = 1
+# CORS Allow
+CORS_ORIGIN_ALLOW_ALL = True
